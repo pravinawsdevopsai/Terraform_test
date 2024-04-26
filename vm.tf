@@ -8,7 +8,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   admin_username      = "adminuser"
   #admin_password      = "Redhat@12345"
   network_interface_ids = [
-    azurerm_network_interface.myvmnic.id 
+    azurerm_network_interface.myvmnic.id
   ]
 
   admin_ssh_key {
@@ -17,7 +17,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   }
 
   os_disk {
-   
+
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }

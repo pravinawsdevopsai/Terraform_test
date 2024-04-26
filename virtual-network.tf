@@ -29,8 +29,8 @@ resource "azurerm_subnet" "mysubnet" {
 ##the public ip
 resource "azurerm_public_ip" "mypublicip" {
   ##this resource block will create only single public ip
- # count = 2
- 
+  # count = 2
+
   #for each accept argument in string format but you need to define multiple string using toset
   ## numeric interpolation
   #count always required a whole number
@@ -38,12 +38,12 @@ resource "azurerm_public_ip" "mypublicip" {
   location            = azurerm_resource_group.myrg.location
   resource_group_name = azurerm_resource_group.myrg.name
   allocation_method   = "Static" #or dynamic
- # domain_name_label   = "app1-vm"
+  # domain_name_label   = "app1-vm"
 }
 
 #the network interface
 resource "azurerm_network_interface" "myvmnic" {
-  
+
   name                = "vmnic-1"
   location            = azurerm_resource_group.myrg.location
   resource_group_name = azurerm_resource_group.myrg.name
